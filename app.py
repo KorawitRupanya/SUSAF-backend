@@ -23,7 +23,7 @@ mysql_ip = "www.db4free.net"
 mysql_user = "susafhackathon"
 mysql_password = "susafhackathon"
 
-OpenAPI_Key = "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"
+OpenAPI_Key = "" #"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"
 
 #GET LIST OF QUESTIONS
 @app.route("/questions", methods=["GET"])
@@ -111,7 +111,9 @@ def promptOpenAPI():
 	response = str(completion.choices[0].text)
 	#return json.dumps(rows)
 	#print(response)
-	return {"AIResult": response}
+	#return {"AIResult": response}
+	json_data = json.dumps({"AIResult": response})
+	return Response(json_data, content_type='application/json')
 
 
 #PROMPT FROM OPEN API
@@ -151,7 +153,9 @@ def promptOpenAPIPerDimension():
 
 	print("Answer : " + prompt)
 
-	return {"AIResult": response}
+	#return {"AIResult": response}
+	json_data = json.dumps({"AIResult": response})
+	return Response(json_data, content_type='application/json')
 
 
 
@@ -168,7 +172,9 @@ def createProject():
 	query = "INSERT INTO projects(title, description) VALUES (%s, %s)"
 	values = (title, description)
 	sql_func.insert(query, values)
-	return {"pushResult": "OK"}
+	#return {"pushResult": "OK"}
+	json_data = json.dumps({"pushResult": "OK"})
+	return Response(json_data, content_type='application/json')
 
 @app.route("/projects", methods=["GET"])
 #@swagger.doc(description='View all projects')
@@ -208,7 +214,9 @@ def createFeature():
 	query = "INSERT INTO features(Project_ID, Features_Name) VALUES (%s, %s)"
 	values = (Features_Name, Project_ID)
 	sql_func.insert(query, values)
-	return {"pushResult": "OK"}
+	#return {"pushResult": "OK"}
+	json_data = json.dumps({"pushResult": "OK"})
+	return Response(json_data, content_type='application/json')
 
 @app.route("/features", methods=["GET"])
 #@swagger.doc(description='View all features')
