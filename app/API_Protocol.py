@@ -8,7 +8,7 @@ import openai
 
 import os
 
-from SQL_Function import SQL_Function
+from app.SQL_Function import SQL_Function
 
 import argparse
 
