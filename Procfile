@@ -1,2 +1,2 @@
-web: gunicorn API_Protocol:app
-worker: python SQL_Functions.py
+web: gunicorn ./app/API_Protocol:app
+worker: python ./app/SQL_Functions.py
