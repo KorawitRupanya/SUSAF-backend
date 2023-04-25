@@ -1,1 +1,2 @@
-web: gunicorn app:app
+web: gunicorn API_Protocol:app
+worker: python SQLFunctions.py
