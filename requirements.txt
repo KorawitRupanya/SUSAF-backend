@@ -5,3 +5,4 @@ json
 datetime
 mysql.connector
 openapi
+gunicorn
