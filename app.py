@@ -23,7 +23,7 @@ mysql_ip = "www.db4free.net"
 mysql_user = "susafhackathon"
 mysql_password = "susafhackathon"
 
-OpenAPI_Key = "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"
+OpenAPI_Key = "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"
 
 #GET LIST OF QUESTIONS
 @app.route("/questions", methods=["GET"])
