@@ -19,9 +19,9 @@ import pandas as pd
 app = Flask(__name__)
 #swagger = Swagger(app)
 
-mysql_ip = ""
-mysql_user = ""
-mysql_password = ""
+mysql_ip = "www.db4free.net"
+mysql_user = "susafhackathon"
+mysql_password = "susafhackathon"
 
 OpenAPI_Key = "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"
 
